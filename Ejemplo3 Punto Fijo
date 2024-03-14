@@ -1,0 +1,23 @@
+
+```java
+paquete com.mycompany.secante1;
+
+importar java.lang.Math;
+
+//Calcular la secante de los ángulos 30, 45 y 60 grados.
+clase pública Secante3 {
+ principal de vacío estático público (cadena [] args) {
+ ángulos dobles [] = {30, 45, 60};
+
+        para (doble ángulo : ángulos) {
+ doble secantValue = 1 / Math.cos(Math.toRadians(ángulo));
+ Sistema.out.println("La secante de " + ángulo + " grados es: " + secantValue);
+        }
+    }
+}
+
+```
+
+
+
+###FIN :)
