@@ -1,0 +1,55 @@
+####Java
+
+`java
+
+clase pública prom5 {
+   
+
+ // Función para la cual queremos contar la raíz
+ función doble estática pública (doble x) {
+ devolver Matemáticas.exp(x) - 2;
+    }
+
+ // Implementación del método de la regla falsa
+ regla doble estática públicaFalsa (doble a, doble b, doble tolerancia, int iterMax) {
+ doble c;
+ doble fa, fb, fc;
+ int iter = 0;
+
+ haz {
+ fa = función(a);
+ fb = función(b);
+
+ // Fórmula de la regla falsa
+ c = (a * fb - b * fa) / (fb - fa);
+ fc = función(c);
+
+ si (fa * fc < 0) {
+ b =c;
+ } else {
+ un =c;
+            }
+
+ iter++;
+ } while (Math.abs(fc) > tolerancia & iter < iterMax);
+
+ devolver c;
+    }
+
+ principal de vacío estático público (cadena [] args) {
+ doble a = 0,0; //Intervalo izquierdo
+ doble b = 2.0; // Intervalo derecho
+ doble tolerancia = 0,0001; //Tolerancia
+ int iterMax = 100; //Número máximo de iteraciones
+
+ doble raiz = reglaFalsa(a, b, tolerancia, iterMax);
+
+ System.out.println("La raíz aproximada es:" + raiz);
+    }
+}
+
+`
+
+
+
+###Fin
