@@ -1,0 +1,45 @@
+
+####Java
+
+```java
+public class Ejemp5 {
+ 
+
+    // Función objetivo: f(x) = x^3 - 2x - 5
+    public static double funcion(double x) {
+        return Math.pow(x, 3) - 2 * x - 5;
+    }
+
+    public static void main(String[] args) {
+        double x0 = 2.0; // Adivinanza inicial
+        double tolerancia = 0.0001;
+        int iterMax = 100;
+
+        double solucion = puntoFijo(x0, tolerancia, iterMax);
+
+        System.out.println("La solución aproximada es: " + solucion);
+    }
+
+    public static double puntoFijo(double x0, double tolerancia, int iterMax) {
+        // Implementación del método de punto fijo aquí
+        // ...
+        return 0;
+        // Implementación del método de punto fijo aquí
+        // ...
+    }
+}
+
+
+
+
+```
+
+
+
+###FIN :)
+
+`
+
+
+
+###FIN :)
