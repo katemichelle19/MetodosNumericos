@@ -1,0 +1,57 @@
+####Javascript
+
+`javascript
+clase pública BisectionMethod {
+ principal de vacío estático público (cadena [] args) {
+ // Ejercicio 1: Encontrar la raíz de f (x) = x^3 - 2x - 5 en el intervalo [2, 3]
+ doble raíz1 = bisecciónMétodo(2.0, 3.0, 0.0001);
+ System.out.println("Raíz 1:" + root1);
+
+ // Ejercicio 2: Encontrar la raíz de f (x) = sin (x) + x^2 - 4 en el intervalo [1, 2]
+ doble raíz2 = bisecciónMétodo(1.0, 2.0, 0.0001);
+ System.out.println("Raíz 2:" + root2);
+
+ // Ejercicio 3: Encontrar la raíz de f (x) = e^x - 4x en el intervalo [1, 2]
+ doble raíz3 = bisecciónMétodo(1.0, 2.0, 0.0001);
+ System.out.println("Raíz 3:" + root3);
+
+ // Ejercicio 4: Encontrar la raíz de f (x) = x^2 - 5 en el intervalo [2, 3]
+ doble raíz4 = bisecciónMétodo(2.0, 3.0, 0.0001);
+ System.out.println("Raíz 4:" + root4);
+
+ // Ejercicio 5: Encontrar la raíz de f (x) = ln (x) - 2 en el intervalo [1, 3]
+ doble raíz5 = bisecciónMétodo(1.0, 3.0, 0.0001);
+ System.out.println("Raíz 5:" + root5);
+    }
+
+ doble bisección estática públicaMétodo (doble a, doble b, doble error) {
+ doble función fa =(a);
+ doble fb;
+ doble c;
+
+ haz {
+ c = (a + b) /2;
+ doble función fc =(c);
+
+ si (fa * fc < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+ } while (Math.abs(b - a) > error);
+
+ devolución (a + b) /2;
+    }
+
+ función doble estática pública (doble x) {
+ // Implementa la función que desea aquí
+ devolver Matemáticas.pow(x, 3) - 2 * x - 5;
+    }
+}
+
+
+
+
+###Fin
