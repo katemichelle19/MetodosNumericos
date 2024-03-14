@@ -1,0 +1,111 @@
+## método de bisección:
+
+> El método de bisección es un método numérico para entrar la razón de una función continua en un intervalo dado. 4
+Funciona dividiendo repetidamente el intervalo en dos partes y seleccionando el subintervalo que garantiza que la raza está contenida dentro de él.
+Este proceso se repite hasta que el intervalo sea lo suficiente pequeño como para contener la razón con la precisión deseada.
+
+### ## Algoritmo:
+[![Algoritmo](que "Algoritmo")](https://web.whatsapp.com/1394dcd0-d0ef-4113-8ed8-df200078c8e3 "Algoritmo")
+
+
+ Parámetros:
+ - Función: "La función f (x) para la cual se quiere encontrar la raíz."
+ - Intervalo: "El intervalo [a, b] donde se buscará la raíz, donde f (a) y f (b) tienen signos abiertos."
+ - Tolerancia: "La precisión deseada para la razón."
+ - Iteraciones_máximas: "El número máximo de iteraciones permitidas para evitar bucles infinitos."
+
+ Paso_a_Paso:
+ - Inicializar a = extremo inferior del intervalo, b = extremo superior del intervalo.
+ - Para cada iteración:
+ - Calcular el punto medio c = (a + b) / 2.
+ - Evaluar f(c).
+ - Si f (c) es cercano a 0 (dentro de la tolerancia), c es la raíz y se termina el algoritmo.
+ - Si f (c) y f (a) tienen signos abiertos, establecer b = c.
+ - Si f (c) y f (b) tienen signos opuestos, establecer a = c.
+ - Repetir hasta que se acumula la condición de convergencia o se alcanza el número máximo de iteraciones.
+
+ Resultado:
+ - Raíz: "El valor de c cuando se alcanza la precisión deseada."
+ - Iteraciones: "El número de iteraciones realizadas hasta entrar la razón."
+-----------------------------------------------------------------------------------------------------------------
+
+## # IMPLEMENTACIÓN EN JAVA
+
+importar javax.script.ScriptEngine;
+importar javax.script.ScriptEngineManager;
+importar javax.script.ScriptException;
+importar java.util.Escáner;
+importar java.util.function.Function;
+
+ principal de vacío estático público (cadena [] args) {
+ // Crear un objeto Escáner para leer la entrada del usuario
+ Escáner escáner = nuevo Escáner (System.in);
+
+ System.out.println("Ingrese la función como una expresión válida de Java:");
+ System.out.println("Por ejemplo, parrafo x^2 - 4, ingrese 'x * x - 4'");
+ Función de cadenaString = scanner.nextLine();
+
+ // Definir la función a partir de la cadena ingresada por el usuario
+ Function<Double, función Double> = buildFunction (functionString);
+
+ System.out.println("Ingrese el límite inferior del intervalo:");
+ duplicar un escáner =.nextDouble();
+
+ System.out.println("Ingrese el límite superior del intervalo:");
+ escáner doble b =.nextDouble();
+
+ System.out.println("Ingrese la precisión deseada (épsilon):");
+ escáner doble épsilon =.nextDouble();
+
+ // Calcular la raíz utilizando el método de bisección
+ bisección = de raíz doble (función, a, b, épsilon);
+
+ // Imprimir el resultante
+ System.out.println("La raíz aproximada es:" raíz +);
+
+ // Cerrar el escáner para evitar fugas de recursos
+ escáner.cerrar();
+    }
+
+ función estática pública<Doble, Doble> buildFunction (String functionString) {
+ Administrador de ScriptEngineManager = nuevo ScriptEngineManager ();
+ Gestor de motor ScriptEngine.getEngineByName("js");
+
+ devolver x -> {
+ prueba {
+ motor.put("x", x);
+ volver Doble.parseDoble(motor.eval(functionString).toString());
+ } catch (ScriptException e) {
+ lanzar nuevo IllegalArgumentException ("La función ingresada no es válida");
+            }
+ };
+    }
+
+ bisección doble estática pública (Function<Double, Double> function, double a, double b, double epsilon) {
+ // Verificar si los límites del intervalo encierran una raíz
+ if (function.apply(a) * function.apply(b) > 0) {
+ lanzar nuevo IllegalArgumentException ("La función no cambia de signo en el intervalo dado");
+        }
+
+ // Implementación del método de bisección
+ mientras que ((b - a) >= epsilon) {
+ // Encontrar el punto medio del intervalo
+ doble c = (a + b) /2;
+ // Calcular el valor de la función en el punto medio
+ doble función fc =.apply(c);
+ // Si el valor de la función en el punto medio es cercano a cero, hemos descubierto una buena aproximación
+ if (Math.abs(fc) < epsilon) {
+ return c; //Devolver la raíz aproximada
+            }
+ // Actualizar los límites del intervalo [a, b] según el cambio de signo
+ si (fc * función.aplicar(a) < 0) {
+ b = c; // Si hay cambio de signo entre a y c, actualizar b
+ } else {
+ a = c; // Si hay cambio de signo entre b y c, actualizar a
+            }
+        }
+ // Devolvedor el punto medio del intervalo como la mejor aproximación en contrada
+ devolución (a + b) /2;
+    }
+}
+-------------------------------------------------
