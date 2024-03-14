@@ -1,0 +1,34 @@
+
+####Java
+
+`java
+paquete com.mycompany.secante1;
+
+importar java.util.Scanner;
+importar java.lang.Math;
+
+//Calcular la suma de las secantes de dos ángulos ingresados por el usuario.
+clase pública Secante2 {
+ principal de vacío estático público (cadena [] args) {
+ Escáner escáner = nuevo Escáner (System.in);
+
+ System.out.print("Ingrese el primer ángulo en grados: ");
+ escáner doble ángulo1 =.nextDouble();
+ secante doble1 = 1 / Math.cos(Math.toRadians(ángulo1));
+
+ System.out.print("Ingrese el segundo ángel en grados:");
+ escáner doble ángulo2 =.nextDouble();
+ secante doble 2 = 1 / Math.cos(Math.toRadians(angle2));
+
+ secantes de suma doble = secant1 + secant2;
+ System.out.println("La suma de las secantes es:" + sumSecants);
+    }
+}
+
+
+
+`
+
+
+
+###FIN :)
