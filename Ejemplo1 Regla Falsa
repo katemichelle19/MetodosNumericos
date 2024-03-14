@@ -1,0 +1,66 @@
+
+
+####Java
+
+```java
+ import java.util.function.Function;
+clase pública prom1 {
+  
+ doble regulación estática públicaFalsa (Function<Double, Double> funcion, doble a, doble b, doble tolerancia, int maxIteraciones) {
+ doble fa = función.aplicar(a);
+ doble fb = funcion.apply(b);
+ doble c = 0;
+ doble fc;
+ int iteraciones = 0;
+
+ mientras que (Math.abs(b - a) > tolerancia & iteraciones < maxIteraciones) {
+ // Cálculos el punto que corta el eje x con la regla falsa
+ c = (a * fb - b * fa) / (fb - fa);
+ fc = función.aplicar(c);
+
+ // Verificamos si c es la raíz o el intervalo se acorta a la tolerancia
+ if (Math.abs(fc) < tolerancia) {
+ romper;
+            }
+
+       
+ si (fa * fc < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+
+ iteraciones++;
+        }
+
+ System.out.println("Iteraciones:" + iteraciones);
+ devolver c;
+    }
+
+ principal de vacío estático público (cadena [] args) {
+ // Definimos la función para entrar su raíz
+ Función<Doble, Función Doble> = x -> x * x - 4;
+
+   
+ doble a = 0;
+ doble b = 3;
+
+ doble tolerancia = 0,0001;
+ int maxiIteraciones = 1000;
+
+ // Aplicamos el método de la regla falsa para entrar la raíz
+ doble raiz = reglaFalsa(función, a, b, tolerancia, maxIteraciones);
+ System.out.println("Raíz encontrada:" + raiz);
+    }
+}
+
+    
+
+
+`
+
+
+
+###Fin
