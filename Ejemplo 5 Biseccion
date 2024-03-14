@@ -1,0 +1,85 @@
+
+
+####Java
+
+```java
+public class BisectionMethod {
+    public static void main(String[] args) {
+        double a = 1.0; // Extremo izquierdo del intervalo
+        double b = 2.0; // Extremo derecho del intervalo
+        double error = 0.0001; // Error tolerado
+        double root = bisectionMethod(a, b, error);
+        System.out.println("Raíz aproximada: " + root);
+    }
+
+    public static double bisectionMethod(double a, double b, double error) {
+        double fa = function(a);
+        double c;
+
+        while ((b - a) >= error) {
+            // Encontrar el punto medio
+            c = (a + b) / 2;
+            double fc = function(c);
+
+            // Verificar si la raíz está en el intervalo [a, c] o [c, b]
+            if (fa * fc < 0) {
+                b = c; // Mover el extremo derecho al punto medio
+            } else {
+                a = c; // Mover el extremo izquierdo al punto medio
+                fa = fc;
+            }
+        }
+
+        // La raíz aproximada será el punto medio del intervalo final
+        return (a + b) / 2;
+    }
+
+    public static double function(double x) {
+        // Define la función que deseas encontrar su raíz
+        return x * x * x - x - 2;
+    }
+}
+public class BisectionMethod {
+    public static void main(String[] args) {
+        double a = 1.0; // Extremo izquierdo del intervalo
+        double b = 2.0; // Extremo derecho del intervalo
+        double error = 0.0001; // Error tolerado
+        double root = bisectionMethod(a, b, error);
+        System.out.println("Raíz aproximada: " + root);
+    }
+
+    public static double bisectionMethod(double a, double b, double error) {
+        double fa = function(a); // Valor de la función en a
+        double fb; // Valor de la función en b
+        double c; // Punto medio del intervalo
+
+        do {
+            c = (a + b) / 2; // Calcula el punto medio del intervalo
+            double fc = function(c); // Valor de la función en c
+
+            if (fa * fc < 0) {
+                // La raíz está en el intervalo [a, c]
+                b = c; // Se actualiza b para que sea c
+                fb = fc; // Se actualiza fb para que sea fc
+            } else {
+                // La raíz está en el intervalo [c, b]
+                a = c; // Se actualiza a para que sea c
+                fa = fc; // Se actualiza fa para que sea fc
+            }
+        } while (Math.abs(b - a) > error); // Continuar hasta que la longitud del intervalo sea menor que el error
+
+        return (a + b) / 2; // Devuelve el punto medio del intervalo como la aproximación de la raíz
+    }
+
+    public static double function(double x) {
+        // Implementa la función que desees aquí
+        return x * x * x - x - 1;
+    }
+}
+
+
+```
+
+
+
+###End
