@@ -1,0 +1,71 @@
+
+
+####Java
+
+```java
+public class prom3 {
+
+
+    // Función de la que queremos encontrar la raíz
+    public static double funcion(double x) {
+        // Ejemplo de función: x^3 - 2x - 5
+ devolver Matemáticas.pow(x, 3) - 2 * x - 5;
+    }
+
+ // Implementación del método de la Regla Falsa
+ regla doble estática públicaFalsa (doble a, doble b, doble épsilon, int maxIter) {
+ doble fa = función(a);
+ doble fb = función(b);
+ doble c = 0;
+
+ si (fa * fb >= 0) {
+ System.out.println("La función no cambia de signo en el intervalo dado");
+ devolver Doble.NaN;
+        }
+
+ para (int i = 0; i < maxIter; i++) {
+ c = (a * función(b) - b * función(a)) / (función(b) - función(a));
+
+ doble fc = función(c);
+
+ if (Math.abs(fc) < epsilon || b - a < epsilon) {
+ romper;
+            }
+
+ si (fa * fc < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+        }
+
+ devolver c;
+    }
+
+ principal de vacío estático público (cadena [] args) {
+ doble a = 2.0; 
+ doble b = 3.0; 
+ doble épsilon = 0,0001;
+ int maxIter = 1000;
+
+ doble raiz = reglaFalsa(a, b, épsilon, maxIter);
+
+ si (!Doble.isNaN(raiz)) {
+ System.out.println("La raíz en contrada es:" + raiz);
+        }
+    }
+}
+
+
+
+
+
+
+
+`
+
+
+
+###Fin
