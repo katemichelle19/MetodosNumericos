@@ -1,0 +1,23 @@
+```java
+package com.mycompany.secante1;
+
+import java.lang.Math;
+
+//Calcular la secante de los ángulos 30, 45 y 60 grados.
+public class Secante3 {
+    public static void main(String[] args) {
+        double[] angles = {30, 45, 60};
+
+        for (double angle : angles) {
+            double secantValue = 1 / Math.cos(Math.toRadians(angle));
+            System.out.println("La secante de " + angle + " grados es: " + secantValue);
+        }
+    }
+}
+
+
+```
+
+
+
+###FIN :)
