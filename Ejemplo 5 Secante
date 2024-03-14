@@ -1,0 +1,25 @@
+####Java
+
+`java
+paquete com.mycompany.secante1;
+
+importar java.lang.Math;
+
+//Calcular la secante de un ángulo aleatorio generado entre 0 y 90 grados.
+clase pública Secante5 {
+ principal de vacío estático público (cadena [] args) {
+ doble aleatorioAngle = Math.random() * 90;
+ doble secantValue = 1 / Math.cos(Math.toRadians(randomAngle));
+
+ System.out.println("Para un ángulo aleatorio de" + randomAngle + "grados, la secante es: "+ secantValue);
+    }
+}
+
+
+
+
+`
+
+
+
+###FIN :)
