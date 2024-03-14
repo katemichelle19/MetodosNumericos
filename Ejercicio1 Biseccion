@@ -1,0 +1,45 @@
+####Javascript
+
+`javascript
+clase pública biseccion {
+ principal de vacío estático público (cadena [] args) {
+ doble a = 2.0; //Extremo izquierdo del intervalo
+ doble b = 3.0; // Extremo derecho del intervalo
+ doble error = 0,0001; // Error tolerado
+ doble raíz = bisectionMethod(a, b, error);
+ System.out.println("Raíz aproximada:" raíz +);
+    }
+
+ doble bisección estática públicaMétodo (doble a, doble b, doble error) {
+ doble función fa =(a);
+ doble fb;
+ doble c;
+
+ haz {
+ c = (a + b) /2;
+ doble función fc =(c);
+
+ si (fa * fc < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+ } while (Math.abs(b - a) > error);
+
+ devolución (a + b) /2;
+    }
+
+ función doble estática pública (doble x) {
+ devolver Matemáticas.pow(x, 3) - 2 * x - 5;
+    }
+}
+
+
+
+`
+
+
+
+###Fin
