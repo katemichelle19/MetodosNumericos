@@ -1,0 +1,36 @@
+
+####Java
+
+```java
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.secante1;
+
+import java.util.Scanner;
+import java.lang.Math;
+
+//Calcular la suma de las secantes de dos ángulos ingresados por el usuario.
+public class Secante2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el primer ángulo en grados: ");
+        double angle1 = scanner.nextDouble();
+        double secant1 = 1 / Math.cos(Math.toRadians(angle1));
+
+        System.out.print("Ingrese el segundo ángulo en grados: ");
+        double angle2 = scanner.nextDouble();
+        double secant2 = 1 / Math.cos(Math.toRadians(angle2));
+
+        double sumSecants = secant1 + secant2;
+        System.out.println("La suma de las secantes es: " + sumSecants);
+    }
+}
+
+```
+
+
+
+###FIN :)
