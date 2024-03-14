@@ -1,0 +1,61 @@
+
+
+####Java
+
+`java
+ importar java.util.function.Function;
+clase pública prom2 {
+  
+
+ principal de vacío estático público (cadena [] args) {
+ // Ejemplo de uso
+ doble a = 1,0;
+ doble b = 2.0;
+ doble tolerancia = 0,0001;
+
+ Function<Double, Double> funcion = x -> Math.pow(x, 3) - 2; //La funcion que quieres encontrar la raíz
+
+ doble resultado = reglaFalsa(función, a, b, tolerancia);
+ System.out.println("La raíz es:" + resultado);
+    }
+
+ regla doble estática públicaFalsa (Function<Double, Double> funcion, doble a, doble b, doble tolerancia) {
+ doble fa = función.aplicar(a);
+ doble fb = funcion.apply(b);
+
+ si (fa * fb > 0) {
+ lanzar nuevo IllegalArgumentException ("La función no tiene raíces en el intervalo dado");
+        }
+
+ doble c = 0,0;
+ doble fc;
+ doble error;
+
+ haz {
+ c = (a * fb - b * fa) / (fb - fa);
+ fc = función.aplicar(c);
+
+ error = Math.abs(fc);
+
+ si (fc * fa < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+
+ } while (error > tolerancia);
+
+ devolver c;
+    }
+}
+
+
+
+
+`
+
+
+
+###Fin
