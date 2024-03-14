@@ -1,0 +1,38 @@
+
+####Java
+
+`java
+paquete com.mycompany.secante1;
+
+importar java.util.Scanner;
+importar java.lang.Math;
+
+//Calcular la media de las secantes de tres ángulos ingresados por el usuario.
+clase pública Secante4 {
+ principal de vacío estático público (cadena [] args) {
+ Escáner escáner = nuevo Escáner (System.in);
+
+ System.out.print("Ingrese el primer ángulo en grados: ");
+ escáner doble ángulo1 =.nextDouble();
+ secante doble1 = 1 / Math.cos(Math.toRadians(ángulo1));
+
+ System.out.print("Ingrese el segundo ángel en grados:");
+ escáner doble ángulo2 =.nextDouble();
+ secante doble 2 = 1 / Math.cos(Math.toRadians(angle2));
+
+ System.out.print("Ingrese el tercer ángel en grados:");
+ escáner doble ángulo3 =.siguienteDoble();
+ secante doble 3 = 1 / Math.cos(Math.toRadians(angle3));
+
+ doble promedioSecantes = (secante1 + secante2 + secante3) /3;
+ System.out.println("La media de las secantes es:" + promedioSecantes);
+    }
+}
+
+
+
+`
+
+
+
+###FIN :)
