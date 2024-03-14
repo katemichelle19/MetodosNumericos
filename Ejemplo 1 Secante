@@ -1,0 +1,30 @@
+
+####Java
+
+```java
+package com.mycompany.secante1;
+
+import java.util.Scanner;
+import java.lang.Math;
+
+//Calcular la secante de un ángulo ingresado por el usuario.
+public class Secante1 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese un ángulo en grados: ");
+        double angleInDegrees = scanner.nextDouble();
+
+        double angleInRadians = Math.toRadians(angleInDegrees);
+        double secantValue = 1 / Math.cos(angleInRadians);
+
+        System.out.println("La secante de " + angleInDegrees + " grados es: " + secantValue);
+    }
+}
+
+
+```
+
+
+
+###FIN :)
