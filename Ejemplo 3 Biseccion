@@ -1,0 +1,53 @@
+
+
+####Java
+
+`java
+clase pública BisectionMethod {
+ principal de vacío estático público (cadena [] args) {
+ doble a = 1,0; //Extremo izquierdo del intervalo
+ doble b = 2.0; // Extremo derecho del intervalo
+ doble error = 0,0001; // Error tolerado
+ doble raíz = bisectionMethod(a, b, error);
+ System.out.println("Raíz aproximada:" raíz +);
+    }
+
+ doble bisección estática públicaMétodo (doble a, doble b, doble error) {
+ doble función fa =(a);
+ doble fb;
+ doble c;
+
+ // Verifica si f (a) y f (b) tienen signos abiertos
+ si (fa * función(b) > 0) {
+ System.out.println("No se puede garantizar la existencia de una razón en este intervalo");
+ devolver Doble.NaN;
+        }
+
+ haz {
+ c = (a + b) / 2; // Punto medio del intervalo [a, b]
+ doble función fc = (c); // Valor de la función en el punto medio
+
+ // Comprueba si la raíz está en el subintervalo [a, c] o [c, b]
+ si (fa * fc < 0) {
+ b =c;
+ fb = fc;
+ } else {
+ un =c;
+ fa = fc;
+            }
+ } while (Math.abs(b - a) > error); //Continúa hasta que el tamaño del intervalo sea menor que el error
+
+ retorno (a + b) / 2; //Devuelve el punto medio del intervalo final como la raza aproximada
+    }
+
+ función doble estática pública (doble x) {
+ // Definir la función para la que desea entrar la raíz
+ devolver Matemáticas.pow(x, 3) - 2 * x - 5;
+    }
+}
+
+`
+
+
+
+###Fin
