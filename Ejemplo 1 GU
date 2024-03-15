@@ -1,7 +1,17 @@
 ####Java
 
-```java
-JOptionPane.showMessageDialog(null, "Resolución de un Sistema de Ecuaciones por Eliminación Gaussiana");
+####Javascript　
+
+```javascript
+package eliminaciongaussiana;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class EliminacionGaussiana {
+
+    public static void main(String[] args) {
+JOptionPane.showMessageDialog(null, "Ecuaciones por Eliminación Gaussiana");
 
         int n = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de ecuaciones: "));
         float[][] matriz = new float[n][n + 1];
@@ -39,12 +49,9 @@ JOptionPane.showMessageDialog(null, "Resolución de un Sistema de Ecuaciones por
         }
         JOptionPane.showMessageDialog(null, mensaje.toString());
     }
-
-
+}
 
 
 ```
 
-
-
-###FIN :)
+###fin:)
