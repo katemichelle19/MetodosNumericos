@@ -1,21 +1,67 @@
 
 ####Java
 
-```java
-// Método de Jacobi
-public static void Jacobi(double M[][], double v[], double v1[], double v2[], int m) {
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < m; j++) {
-            if (i != j) {
-                v2[i] += M[i][j] * v1[j];
+
+
+####Javascript　
+
+public class JacobiMethod {
+
+    public static double[] jacobi(double[][] A, double[] b, int maxIterations, double tolerance) {
+        int n = A.length;
+        double[] x = new double[n];
+        double[] x_new = new double[n];
+        int iter = 0;
+        double error = tolerance + 1; // Inicializar el error con un valor mayor que la tolerancia
+        
+        // Comenzar iteraciones
+        while (iter < maxIterations && error > tolerance) {
+            for (int i = 0; i < n; i++) {
+                double sum = 0;
+                for (int j = 0; j < n; j++) {
+                    if (j != i) {
+                        sum += A[i][j] * x[j];
+                    }
+                }
+                x_new[i] = (b[i] - sum) / A[i][i];
+            }
+            
+            // Calcular el error
+            error = calculateError(x, x_new);
+            
+            // Actualizar el vector x con los nuevos valores
+            System.arraycopy(x_new, 0, x, 0, n);
+            
+            iter++;
+        }
+        
+        return x;
+    }
+    
+    // Método para calcular el error entre dos iteraciones consecutivas
+    private static double calculateError(double[] x, double[] x_new) {
+        double max = Math.abs(x_new[0] - x[0]);
+        for (int i = 1; i < x.length; i++) {
+            double error = Math.abs(x_new[i] - x[i]);
+            if (error > max) {
+                max = error;
             }
         }
-        v2[i] = (v[i] - v2[i]) / M[i][i];
+        return max;
+    }
+
+    public static void main(String[] args) {
+        double[][] A = {{4, 1, 2}, {3, 5, 1}, {1, 1, 3}};
+        double[] b = {4, 7, 3};
+        int maxIterations = 1000;
+        double tolerance = 1e-6;
+
+        double[] solution = jacobi(A, b, maxIterations, tolerance);
+
+        // Mostrar la solución
+        System.out.println("Solución encontrada:");
+        for (double value : solution) {
+            System.out.println(value);
+        }
     }
 }
-
-
-
-```
-
-###FIN :)
